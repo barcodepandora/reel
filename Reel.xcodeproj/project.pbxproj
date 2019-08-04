@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20143F4222F5D22F002FBC9A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20143F4122F5D22F002FBC9A /* Constant.swift */; };
+		2053CC8B22F7540E0059D244 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC8A22F7540E0059D244 /* DataManager.swift */; };
+		2053CC8F22F7A0360059D244 /* DiskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC8E22F7A0360059D244 /* DiskManager.swift */; };
 		20AC12E122F63616005D477B /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E022F63616005D477B /* SummaryViewModel.swift */; };
 		20AC12E322F636CC005D477B /* SummaryViewModelOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */; };
 		20AC12E522F658F7005D477B /* SummaryViewModelOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */; };
-		20AC12E722F65BCB005D477B /* CollectionShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E622F65BCB005D477B /* CollectionShow.swift */; };
-		20AC12E922F65C16005D477B /* CollectionShowPopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E822F65C16005D477B /* CollectionShowPopular.swift */; };
-		20AC12EB22F65F49005D477B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12EA22F65F49005D477B /* RealmManager.swift */; };
 		5E8046B9E2B067F23CB90C92 /* Pods_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8B4ED3DEFF23A9AB0081AB /* Pods_Reel.framework */; };
 		8B9A3A7595E009B9685D716C /* Pods_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E946BE0B9809CBE9A97445 /* Pods_Reel.framework */; };
 		A646EBC621389C310070349D /* SummaryViewModelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = A646EBC521389C310070349D /* SummaryViewModelX.swift */; };
@@ -36,12 +35,11 @@
 /* Begin PBXFileReference section */
 		0DB822AFB06E90EE5F428764 /* Pods-Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reel/Pods-Reel.release.xcconfig"; sourceTree = "<group>"; };
 		20143F4122F5D22F002FBC9A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2053CC8A22F7540E0059D244 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2053CC8E22F7A0360059D244 /* DiskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskManager.swift; sourceTree = "<group>"; };
 		20AC12E022F63616005D477B /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOnline.swift; sourceTree = "<group>"; };
 		20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOffline.swift; sourceTree = "<group>"; };
-		20AC12E622F65BCB005D477B /* CollectionShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionShow.swift; sourceTree = "<group>"; };
-		20AC12E822F65C16005D477B /* CollectionShowPopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionShowPopular.swift; sourceTree = "<group>"; };
-		20AC12EA22F65F49005D477B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		677D63495A11716697F18E9A /* Pods-Reel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reel/Pods-Reel.debug.xcconfig"; sourceTree = "<group>"; };
 		82E946BE0B9809CBE9A97445 /* Pods_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D29087A8CABF721A63A04B /* Pods-Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reel/Pods-Reel.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,9 +85,17 @@
 			isa = PBXGroup;
 			children = (
 				20143F4122F5D22F002FBC9A /* Constant.swift */,
-				20AC12EA22F65F49005D477B /* RealmManager.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		2053CC8722F752FB0059D244 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2053CC8A22F7540E0059D244 /* DataManager.swift */,
+				2053CC8E22F7A0360059D244 /* DiskManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		20AC12DF22F635B9005D477B /* ViewModel */ = {
@@ -192,6 +198,7 @@
 		A6B227122128A49D0024E410 /* Reel */ = {
 			isa = PBXGroup;
 			children = (
+				2053CC8722F752FB0059D244 /* Data */,
 				A6561A532135B93F00DA3437 /* VIew */,
 				A67B4B80212916EF00097CB9 /* ViewController */,
 				20AC12DF22F635B9005D477B /* ViewModel */,
@@ -208,8 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				A6BAFE43212F516E00A7E1C9 /* Show.swift */,
-				20AC12E622F65BCB005D477B /* CollectionShow.swift */,
-				20AC12E822F65C16005D477B /* CollectionShowPopular.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,15 +327,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Reel/Pods-Reel-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,11 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A646EBC621389C310070349D /* SummaryViewModelX.swift in Sources */,
+				2053CC8B22F7540E0059D244 /* DataManager.swift in Sources */,
 				A646EBCA21389E3B0070349D /* SummaryTable.swift in Sources */,
-				20AC12E922F65C16005D477B /* CollectionShowPopular.swift in Sources */,
+				2053CC8F22F7A0360059D244 /* DiskManager.swift in Sources */,
 				A6BAFE44212F516E00A7E1C9 /* Show.swift in Sources */,
 				A6E7B359212919DE00CCFBB2 /* RequestConstant.swift in Sources */,
-				20AC12EB22F65F49005D477B /* RealmManager.swift in Sources */,
 				A6561A522135B93A00DA3437 /* ShowDesign.swift in Sources */,
 				A67B4B7E2129143300097CB9 /* Request.swift in Sources */,
 				A6CA8C48213439CE00AB0D67 /* SummaryViewController.swift in Sources */,
@@ -359,7 +362,6 @@
 				20AC12E522F658F7005D477B /* SummaryViewModelOffline.swift in Sources */,
 				A646EBC821389D850070349D /* SummarySearchController.swift in Sources */,
 				20AC12E322F636CC005D477B /* SummaryViewModelOnline.swift in Sources */,
-				20AC12E722F65BCB005D477B /* CollectionShow.swift in Sources */,
 				A6B227142128A49D0024E410 /* AppDelegate.swift in Sources */,
 				A6E7B357212919AD00CCFBB2 /* ShowViewController.swift in Sources */,
 				20143F4222F5D22F002FBC9A /* Constant.swift in Sources */,

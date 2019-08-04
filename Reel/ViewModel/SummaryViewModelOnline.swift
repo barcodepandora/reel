@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Realm
 
 class SummaryViewModelOnline: SummaryViewModel {
     
@@ -17,15 +16,13 @@ class SummaryViewModelOnline: SummaryViewModel {
     // MARK: - Retrieve for view
     
     override func getPopularMovies() {
+        super.getPopularMovies()
         Request.getSummary(method: Request.Methods.SearchPopularMovie, limitForPages: 306)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let popularMovies = collectionShow {
                         self.summaryViewController.popularMoviesArray = popularMovies
-//                        self.summaryViewMod"elOffline.writePopularMoviesArray(popularMovies)
-//                        try! realm.write {
-//                            realm.add(husband)
-//                        }
+                        self.summaryViewModelOffline.writePopularMovies(popularMovies)
                         self.refreshSummary()
                     }
                 } else {
@@ -36,11 +33,13 @@ class SummaryViewModelOnline: SummaryViewModel {
     }
     
     override func getTopRatedMovies() {
+        super.getTopRatedMovies()
         Request.getSummary(method: Request.Methods.SearchTopRatedMovies, limitForPages: 15)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let topRatedMovies = collectionShow {
                         self.summaryViewController.topRatedMoviesArray = topRatedMovies
+                        self.summaryViewModelOffline.writeTopRatedMovies(topRatedMovies)
                         self.refreshSummary()
                     }
                 } else {
@@ -51,11 +50,13 @@ class SummaryViewModelOnline: SummaryViewModel {
     }
     
     override func getUpcomingMovies() {
+        super.getUpcomingMovies()
         Request.getSummary(method: Request.Methods.SearchUpcomingMovies, limitForPages: 15)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let upcomingMovies = collectionShow {
                         self.summaryViewController.upcomingMoviesArray = upcomingMovies
+                        self.summaryViewModelOffline.writeUpcomingMovies(upcomingMovies)
                         self.refreshSummary()
                     }
                 } else {

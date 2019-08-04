@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Show {
+struct Show: Codable {
 	
 	// MARK: - Character
 	
@@ -21,24 +21,28 @@ struct Show {
 	let voteAverage: Double?
 	let popularity: Double?
 	let videoKey: String?
+//    let method: String?
 	
-	// MARK: - Initialize
+	// MARK: - Init
 	
 	init(dictionary: [String:AnyObject]) {
-		title = dictionary[Request.JSONResponseKeys.MovieTitle] as? String
-		movieId = dictionary[Request.JSONResponseKeys.MovieID] as? Int
-		trailerId = dictionary[Request.JSONResponseKeys.TrailerID] as? Int
-		posterPath = dictionary[Request.JSONResponseKeys.MoviePosterPath] as? String
-		overview = dictionary[Request.JSONResponseKeys.MovieOverview] as? String
-		voteAverage = dictionary[Request.JSONResponseKeys.MovieAverage] as? Double
-		popularity = dictionary[Request.JSONResponseKeys.MoviePopularity] as? Double
-		videoKey = dictionary[Request.JSONResponseKeys.MovieVideoKey] as? String
+		self.title = dictionary[Request.JSONResponseKeys.MovieTitle] as? String
+		self.movieId = dictionary[Request.JSONResponseKeys.MovieID] as? Int
+		self.trailerId = dictionary[Request.JSONResponseKeys.TrailerID] as? Int
+		self.posterPath = dictionary[Request.JSONResponseKeys.MoviePosterPath] as? String
+		self.overview = dictionary[Request.JSONResponseKeys.MovieOverview] as? String
+		self.voteAverage = dictionary[Request.JSONResponseKeys.MovieAverage] as? Double
+		self.popularity = dictionary[Request.JSONResponseKeys.MoviePopularity] as? Double
+		self.videoKey = dictionary[Request.JSONResponseKeys.MovieVideoKey] as? String
 		
 		if let releaseDateString = dictionary[Request.JSONResponseKeys.MovieReleaseDate] as? String, releaseDateString.isEmpty == false {
 			releaseYear = releaseDateString.substring(to: releaseDateString.characters.index(releaseDateString.startIndex, offsetBy: 4))
 		} else {
 			releaseYear = ""
 		}
+        
+//        self.method = Request.shared.method // init with method
+        
 	}
 	
 	static func showsFromResults(_ results: [[String:AnyObject]]) -> [Show] {
@@ -48,5 +52,20 @@ struct Show {
 		}
 		return movies
 	}
+}
+
+struct ShowMethod: Codable {
+    
+    // MARK: - Character
+    
+    let method: String?
+    let movieId: String?
+
+    // MARK: - Init
+    
+    init(dictionary: [String:AnyObject]) {
+        self.method = dictionary["method"] as? String
+        self.movieId = dictionary["movieId"] as? String
+    }
 }
 

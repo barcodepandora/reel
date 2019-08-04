@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'Reel' do
     pod 'Alamofire'
-    pod 'RealmSwift', '~> 3.17'
     pod 'YouTubePlayer-Swift', '~> 1.0'
+    pod 'Disk', '~> 0.6.3'
 end

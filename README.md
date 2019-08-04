@@ -35,4 +35,4 @@ Pattern MVVM
 ### TODO:
 
 * Issue Realm
-* Issue YoutubePlayer-Swift
+* Issue YoutubePlayer-Swift at pod install

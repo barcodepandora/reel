@@ -17,12 +17,15 @@ class SummaryViewModel {
     // MARK: - Retrieve for view
     
     func getPopularMovies() {
+        Request.shared.method = Request.Methods.SearchPopularMovie // Save method
     }
     
     func getTopRatedMovies() {
+        Request.shared.method = Request.Methods.SearchTopRatedMovies
     }
     
     func getUpcomingMovies() {
+        Request.shared.method = Request.Methods.SearchUpcomingMovies
     }
     
     func getSearchTextMovies(_ searchText: String) {

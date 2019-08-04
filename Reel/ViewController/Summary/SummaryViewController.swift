@@ -19,7 +19,7 @@ class SummaryViewController: UIViewController {
     var filteredMoviesArray: [Show]?
     var dictionaryForShowArrays: [String: [Show]]?
     var summaryViewModel: SummaryViewModel?
-    var isOnline = true
+    var isOnline = false
 	
 	// MARK: - Show
     
@@ -90,11 +90,11 @@ class SummaryViewController: UIViewController {
 	
 	func prepareSearchAndScopeBar() {
 		self.searchController.searchResultsUpdater = self // protocol UISearchResultsUpdating
-//        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
 		self.navigationItem.searchController = searchController
 		self.definesPresentationContext = true
 		self.searchController.searchBar.delegate = self
-		let categories = [Constant.EXPLORE, Constant.POPULAR, Constant.TOP_RATED, Constant.UPCOMING]
+		let categories = [Constant.EXPLORE.components(separatedBy: " ")[0], Constant.POPULAR.components(separatedBy: " ")[0], Constant.TOP_RATED.components(separatedBy: " ")[0], Constant.UPCOMING.components(separatedBy: " ")[0]]
 		self.searchController.searchBar.scopeButtonTitles = categories
 	}
 	

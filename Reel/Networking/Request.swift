@@ -11,6 +11,14 @@ import Alamofire
 
 class Request: NSObject {
 	
+    // MARK: - Shared
+    
+    static let shared = Request()
+    
+    // MARK: - Character
+    
+    var method: String?
+    
 	// MARK: - Init
 	
 	override init() {

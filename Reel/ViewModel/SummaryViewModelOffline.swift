@@ -13,18 +13,36 @@ class SummaryViewModelOffline: SummaryViewModel {
     // MARK: - Retrieve for view
     
     override func getPopularMovies() {
+        super.getPopularMovies()
+        self.summaryViewController.popularMoviesArray = DiskManager.shared.getPopularMovies()
+        self.refreshSummary()
     }
     
     override func getTopRatedMovies() {
+        super.getTopRatedMovies()
+        self.summaryViewController.topRatedMoviesArray = DiskManager.shared.getTopRatedMovies()
+        self.refreshSummary()
     }
     
     override func getUpcomingMovies() {
+        super.getUpcomingMovies()
+        self.summaryViewController.upcomingMoviesArray = DiskManager.shared.getUpcomingMovies()
+        self.refreshSummary()
     }
     
     override func getSearchTextMovies(_ searchText: String) {
     }
     
-    func writePopularMoviesArray(_ showArray: [Show]) {
-        RealmManager.shared.writePopularMoviesArray(showArray)
+    func writePopularMovies(_ showArray: [Show]) {
+        DiskManager.shared.writePopularMovies(showArray)
     }
+
+    func writeTopRatedMovies(_ showArray: [Show]) {
+        DiskManager.shared.writeTopRatedMovies(showArray)
+    }
+
+    func writeUpcomingMovies(_ showArray: [Show]) {
+        DiskManager.shared.writeUpcomingMovies(showArray)
+    }
+
 }
