@@ -121,58 +121,38 @@ class Request: NSObject {
 //    }
 	
 	
-	// MARK: Get Movie Trailer
-	// task: obtener el trailer (video) de una película en particular
-//    static func getMovieTrailer(_ videoMethod: String, _ completionHandlerForVideo: @escaping (_ success: Bool, _ videoTrailer: [Show]?, _ error: String?) -> Void) {
-//        
-//        /* 1. 📞 Realiza la llamada a la API, a través de la función request() de Alamofire 🚀 */
-//        //Alamofire.request(configureUrl(videoMethod)).responseJSON { response in
-//        Alamofire.request(configureUrl(videoMethod)).responseJSON { response in
-//
-//            
-//            // response status code
-//            if let status = response.response?.statusCode {
-//                switch(status){
-//                case 200:
-//                    print("example success")
-//                default:
-//                    let errorMessage = "error with response status: \(status)"
-//                    completionHandlerForVideo(false, nil, errorMessage)
-//                }
-//            }
-//            
-//            /* 2. Almacena la respuesta del servidor (response.result.value) en la constante 'jsonObjectResult' 📦 */
-//            if let jsonObjectResult: Any = response.result.value {
-//                
-//                debugPrint("JSON\(jsonObjectResult)")
-//                
-//                let jsonObjectResultDictionary = jsonObjectResult as! [String:AnyObject]
-//                
-//                debugPrint("JSON DICTIONARY\(jsonObjectResultDictionary)")
-//                
-//                // json key 'results' y 'id'
-//                if let results = jsonObjectResultDictionary[Request.JSONResponseKeys.Results], let movieId = jsonObjectResultDictionary[Request.JSONResponseKeys.MovieID] {
-//                    
-//                    debugPrint("Foundation \(movieId)")
-//                    
-//                    // rellena el objeto 'TMBbMovie' con los valores que contiene las keys 'results' y 'id' 🔌
-//                    let resultsVideoMovie = Show.showsFromResults(results as! [[String : AnyObject]])
-//                    //let idVideoMovie = TMDbMovie.moviesFromResults(movieId as! Int)
-//                    
-//                    //test
-//                    // cantidad de trailer que tiene la película solicitada
-//                    debugPrint("Los videos disponibles (trailer) de una película en particular:\(resultsVideoMovie.count)")
-//                    
-//                    // envía el ch los resultados extraídos de esta solicitud (los valores que contiene la key 'results')
-//                    completionHandlerForVideo(true, resultsVideoMovie, nil)
-//                    
-//                } else {
-//                    completionHandlerForVideo(false, nil, "error")
-//                }
-//            }
-//            
-//        }
-//    }
+	// MARK: Trailer
+
+    static func getMovieTrailer(_ videoMethod: String, _ completionHandlerForVideo: @escaping (_ success: Bool, _ videoTrailer: [Show]?, _ error: String?) -> Void) {
+        
+        Alamofire.request(configureUrl(videoMethod)).responseJSON { response in
+            if let status = response.response?.statusCode {
+                switch(status){
+                case 200:
+                    print("Response OK")
+                default:
+                    let errorMessage = "Response KO: \(status)"
+                    completionHandlerForVideo(false, nil, errorMessage)
+                }
+            }
+            
+            if let jsonObjectResult: Any = response.result.value {
+                debugPrint("JSON\(jsonObjectResult)")
+                let jsonObjectResultDictionary = jsonObjectResult as! [String:AnyObject]
+                
+                debugPrint("Result \(jsonObjectResultDictionary)")
+                
+                if let results = jsonObjectResultDictionary[Request.JSONResponseKeys.Results], let movieId = jsonObjectResultDictionary[Request.JSONResponseKeys.MovieID] {
+                    debugPrint("Foundation \(movieId)")
+                    let resultsVideoMovie = Show.showsFromResults(results as! [[String : AnyObject]])
+                    debugPrint("Trailer: \(resultsVideoMovie.count)")
+                    completionHandlerForVideo(true, resultsVideoMovie, nil)
+                } else {
+                    completionHandlerForVideo(false, nil, "error")
+                }
+            }
+        }
+    }
 	
 	
 	// MARK: - Util

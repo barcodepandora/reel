@@ -13,7 +13,7 @@ class ShowViewController: UIViewController {
 	// MARK: - Character
 	
 	var selectedMovie: Show?
-//    var movieTrailers = [Show]()
+    var movieTrailers = [Show]()
 //    override var prefersStatusBarHidden: Bool { return true }
 	
 	// MARK: - Outlet
@@ -68,36 +68,25 @@ class ShowViewController: UIViewController {
 	// MARK: - Action
 	
 	@IBAction func trailerButtonPressed(_ sender: UIButton) {
-		
-//        var movieId: String = String()
-//
-//        if let selectedMovieId = selectedMovie?.movieId { movieId = String(selectedMovieId) }
-//
-//        let videoMethod = TMDbClient.Methods.SearchMovie + movieId + TMDbClient.Methods.SearchVideo
-//
-//        // networking
-//        TMDbClient.getMovieTrailer (videoMethod){ (success, movieTrailers, error) in
-//
-//            DispatchQueue.main.async {
-//
-//                if success {
-//                    // comprueba si la película tiene un trailer disponible
-//                    if movieTrailers?.count == 0 {
-//                        self.displayAlertView("Trailer No Disponible", "Esta película aún no tiene trailer ")
-//                    } else {
-//                        // si tiene trailers disponbiles
-//                        for item in movieTrailers! {
-//                            // los agrega en el array 'firstTrailer'...
-//                            self.movieTrailers.append(item)
-//                        }
-//                        // ... y los envía a la siguiente pantalla
-//                        self.performSegue(withIdentifier: "toTrailer", sender: nil)
-//                    }
-//                } else {
-//                    debugPrint(error ?? "")
-//                }
-//            }
-//        } // end trailing closure
+        var movieId: String = String()
+        if let selectedMovieId = selectedMovie?.movieId { movieId = String(selectedMovieId) }
+        let videoMethod = Request.Methods.SearchMovie + movieId + Request.Methods.SearchVideo
+        Request.getMovieTrailer (videoMethod){ (success, movieTrailers, error) in
+            DispatchQueue.main.async {
+                if success {
+                    if movieTrailers?.count == 0 {
+                        self.displayAlertView("Error", "No se puede ver trailer ")
+                    } else {
+                        for item in movieTrailers! {
+                            self.movieTrailers.append(item)
+                        }
+                        self.performSegue(withIdentifier: "toTrailer", sender: nil)
+                    }
+                } else {
+                    debugPrint(error ?? "")
+                }
+            }
+        }
 	}
 	
 	// MARK: - Alert
@@ -122,7 +111,7 @@ extension ShowViewController {
 		if segue.identifier == "toTrailer" {
 			let trailerVC = segue.destination as! MovieTrailerViewController
 			trailerVC.selectedMovie = selectedMovie
-//            trailerVC.movieTrailersArray = movieTrailers
+            trailerVC.movieTrailersArray = movieTrailers
 		}
 	}
 }

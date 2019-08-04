@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yNS-nm-Ove">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,20 +13,20 @@
         <!--Detail-->
         <scene sceneID="HBk-DG-Vqe">
             <objects>
-                <viewController storyboardIdentifier="Detail" title="Detail" id="PRX-3Z-tu0" customClass="ShowViewController" customModule="TMDiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" title="Detail" id="PRX-3Z-tu0" customClass="ShowViewController" customModule="Reel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FGR-fo-Zzz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="waj-Uw-N7f">
-                                <rect key="frame" x="38" y="114" width="521" height="268"/>
+                                <rect key="frame" x="38" y="114" width="296" height="268"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="268" id="YS3-fS-Ror"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="lln-Uu-qoA">
-                                <rect key="frame" x="67" y="396" width="465" height="153"/>
+                                <rect key="frame" x="67" y="396" width="240" height="220"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,18 +34,18 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCD-xw-JBh">
-                                <rect key="frame" x="30" y="575.5" width="540" height="14.5"/>
+                                <rect key="frame" x="30" y="642.5" width="315" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-yD-FKa">
-                                <rect key="frame" x="546" y="580" width="33" height="10"/>
+                                <rect key="frame" x="324" y="647" width="30" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="Zv5-34-4pp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="trailer">
+                                <state key="normal" title="Ver...">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -82,13 +86,39 @@
         <!--Trailer -->
         <scene sceneID="Fhh-oW-poP">
             <objects>
-                <viewController title="Trailer " id="IYd-EI-Eyf" customClass="MovieTrailerViewController" customModule="TMDiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Trailer " id="IYd-EI-Eyf" customClass="MovieTrailerViewController" customModule="Reel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tiR-Yl-jSd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ksq-LS-tlk" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
+                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-mK-bHK">
+                                        <rect key="frame" x="177.5" y="98" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Zqt-mK-bHK" firstAttribute="centerX" secondItem="Ksq-LS-tlk" secondAttribute="centerX" id="Fow-Zb-r8b"/>
+                                    <constraint firstItem="Zqt-mK-bHK" firstAttribute="centerY" secondItem="Ksq-LS-tlk" secondAttribute="centerY" id="eId-my-xx3"/>
+                                    <constraint firstItem="Zqt-mK-bHK" firstAttribute="top" secondItem="Ksq-LS-tlk" secondAttribute="top" constant="98" id="x27-qc-N3t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lbo-I5-Wov" firstAttribute="trailing" secondItem="Ksq-LS-tlk" secondAttribute="trailing" id="ATG-RC-sIc"/>
+                            <constraint firstItem="Ksq-LS-tlk" firstAttribute="top" secondItem="lbo-I5-Wov" secondAttribute="top" constant="161" id="M5X-jj-LNb"/>
+                            <constraint firstItem="Ksq-LS-tlk" firstAttribute="leading" secondItem="lbo-I5-Wov" secondAttribute="leading" id="gKA-y9-V4K"/>
+                            <constraint firstItem="Ksq-LS-tlk" firstAttribute="centerX" secondItem="lbo-I5-Wov" secondAttribute="centerX" id="kQ5-sH-vyO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lbo-I5-Wov"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Zqt-mK-bHK" id="WbV-Ug-Mqw"/>
+                        <outlet property="movieTrailerVideo" destination="Ksq-LS-tlk" id="gxF-bm-aP2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhJ-aV-fFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,24 +127,24 @@
         <!--Movie-->
         <scene sceneID="0Ph-Lr-O2N">
             <objects>
-                <viewController title="Movie" id="3Tp-jd-D2j" customClass="SummaryViewController" customModule="TMDiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Movie" id="3Tp-jd-D2j" customClass="SummaryViewController" customModule="Reel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmX-vI-upb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="search movies" translatesAutoresizingMaskIntoConstraints="NO" id="vTn-6b-pr5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lnE-BF-VWQ">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="dUP-3N-Y1q" detailTextLabel="4Rm-Pt-A9e" rowHeight="96" style="IBUITableViewCellStyleSubtitle" id="OWS-j0-NVL">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="96"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OWS-j0-NVL" id="3kE-sT-nUO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="95.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dUP-3N-Y1q">

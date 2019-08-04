@@ -5,22 +5,26 @@ PODS:
   - Realm/Headers (3.17.3)
   - RealmSwift (3.17.3):
     - Realm (= 3.17.3)
+  - YouTubePlayer-Swift (1.0)
 
 DEPENDENCIES:
   - Alamofire
   - RealmSwift (~> 3.17)
+  - YouTubePlayer-Swift (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Realm
     - RealmSwift
+    - YouTubePlayer-Swift
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 7a8da0dfb56d6474c8522b065b20391e868f5d8a
+PODFILE CHECKSUM: 4807e04ac40a006b24c481bb0b1efbcdd4e1ee3a
 
 COCOAPODS: 1.6.0
