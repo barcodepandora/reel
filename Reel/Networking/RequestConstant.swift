@@ -13,7 +13,7 @@ extension Request {
 	// MARK: - URL
 	
 	struct Constants {
-		static let ApiKey = "0942529e191d0558f888245403b4dca7" // apikey
+        static let ApiKey = "cb367eebaf70f840cfabdf6e1e8febe1"
         static let UserID = "id"
 		static let ApiScheme = "https"
 		static let ApiHost = "api.themoviedb.org"
@@ -42,7 +42,7 @@ extension Request {
 	}
 	
 	struct ParameterValues {
-		static let ApiKey = "0942529e191d0558f888245403b4dca7"
+        static let ApiKey = "cb367eebaf70f840cfabdf6e1e8febe1"
 		static let Language = "en-US"
 		static let secureBaseImageURLString = "https://image.tmdb.org/t/p/"
 		static let posterSizes = ["w92", "w154", "w185", "w342", "w500", "w780", "original"]
