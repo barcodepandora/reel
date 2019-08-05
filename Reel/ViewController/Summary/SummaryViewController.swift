@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SummaryViewController: UIViewController {
 	
@@ -19,7 +20,6 @@ class SummaryViewController: UIViewController {
     var filteredMoviesArray: [Show]?
     var dictionaryForShowArrays: [String: [Show]]?
     var summaryViewModel: SummaryViewModel?
-    var isOnline = false
 	
 	// MARK: - Show
     
@@ -35,11 +35,19 @@ class SummaryViewController: UIViewController {
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var movieTableView: UITableView!
 
+    // MARK: - Reactive
+    
+    private let baseline = Variable("baseline")
+    var gestured:Observable<String> {
+        return baseline.asObservable()
+    }
+
 	// MARK: - View
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.prepareViewModel()
+        self.doReactive()
+//        self.prepareViewModel()
         self.navigationItem.title = Constant.EXPLORE
         self.prepareSearchAndScopeBar()
         self.preparaShowViewController()
@@ -73,12 +81,19 @@ class SummaryViewController: UIViewController {
 	// MARK: - Prepare
 	
     func prepareViewModel() {
-        if self.isOnline {
+        if OnlineManager.shared.isOnline() {
             self.summaryViewModel = SummaryViewModelOnline()
         } else {
             self.summaryViewModel = SummaryViewModelOffline()
         }
         self.summaryViewModel?.summaryViewController = self
+    }
+    
+    func doReactive() {
+        RxManager.shared.doObserver(time: 120, summaryViewController: self)
+        func refreshFromDelegate() {
+            baseline.value = "baselineOnline"
+        }
     }
     
 	func preparaShowViewController(){

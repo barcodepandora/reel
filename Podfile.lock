@@ -1,24 +1,33 @@
 PODS:
   - Alamofire (4.8.2)
   - Disk (0.6.3)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
   - YouTubePlayer-Swift (1.0)
 
 DEPENDENCIES:
   - Alamofire
   - Disk (~> 0.6.3)
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
   - YouTubePlayer-Swift (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Disk
+    - RxCocoa
+    - RxSwift
     - YouTubePlayer-Swift
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Disk: 76cccb6fed1c27cd661bbdea7b117d887c2f72e5
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: fe9fc644d9b8d018839cd1d3b5664c2c866f6274
+PODFILE CHECKSUM: 41136abceefd354cb1eb6e48a6371bb73bca7887
 
 COCOAPODS: 1.6.0

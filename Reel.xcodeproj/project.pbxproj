@@ -10,6 +10,9 @@
 		20143F4222F5D22F002FBC9A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20143F4122F5D22F002FBC9A /* Constant.swift */; };
 		2053CC8B22F7540E0059D244 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC8A22F7540E0059D244 /* DataManager.swift */; };
 		2053CC8F22F7A0360059D244 /* DiskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC8E22F7A0360059D244 /* DiskManager.swift */; };
+		2053CC9122F7AB610059D244 /* OnlineManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC9022F7AB610059D244 /* OnlineManager.swift */; };
+		2053CC9422F7AE3A0059D244 /* RxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC9322F7AE3A0059D244 /* RxManager.swift */; };
+		2053CC9622F7AED60059D244 /* ObserverOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053CC9522F7AED60059D244 /* ObserverOnline.swift */; };
 		20AC12E122F63616005D477B /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E022F63616005D477B /* SummaryViewModel.swift */; };
 		20AC12E322F636CC005D477B /* SummaryViewModelOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */; };
 		20AC12E522F658F7005D477B /* SummaryViewModelOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */; };
@@ -37,6 +40,9 @@
 		20143F4122F5D22F002FBC9A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2053CC8A22F7540E0059D244 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2053CC8E22F7A0360059D244 /* DiskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskManager.swift; sourceTree = "<group>"; };
+		2053CC9022F7AB610059D244 /* OnlineManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineManager.swift; sourceTree = "<group>"; };
+		2053CC9322F7AE3A0059D244 /* RxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxManager.swift; sourceTree = "<group>"; };
+		2053CC9522F7AED60059D244 /* ObserverOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverOnline.swift; sourceTree = "<group>"; };
 		20AC12E022F63616005D477B /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOnline.swift; sourceTree = "<group>"; };
 		20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOffline.swift; sourceTree = "<group>"; };
@@ -98,6 +104,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		2053CC9222F7AE290059D244 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				2053CC9322F7AE3A0059D244 /* RxManager.swift */,
+				2053CC9522F7AED60059D244 /* ObserverOnline.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
 		20AC12DF22F635B9005D477B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +166,7 @@
 		A67B4B7F212916E200097CB9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2053CC9022F7AB610059D244 /* OnlineManager.swift */,
 				A67B4B7D2129143300097CB9 /* Request.swift */,
 				A6E7B358212919DE00CCFBB2 /* RequestConstant.swift */,
 			);
@@ -199,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				2053CC8722F752FB0059D244 /* Data */,
+				2053CC9222F7AE290059D244 /* RxSwift */,
 				A6561A532135B93F00DA3437 /* VIew */,
 				A67B4B80212916EF00097CB9 /* ViewController */,
 				20AC12DF22F635B9005D477B /* ViewModel */,
@@ -328,12 +345,16 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Reel/Pods-Reel-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,8 +375,11 @@
 				2053CC8F22F7A0360059D244 /* DiskManager.swift in Sources */,
 				A6BAFE44212F516E00A7E1C9 /* Show.swift in Sources */,
 				A6E7B359212919DE00CCFBB2 /* RequestConstant.swift in Sources */,
+				2053CC9422F7AE3A0059D244 /* RxManager.swift in Sources */,
 				A6561A522135B93A00DA3437 /* ShowDesign.swift in Sources */,
+				2053CC9622F7AED60059D244 /* ObserverOnline.swift in Sources */,
 				A67B4B7E2129143300097CB9 /* Request.swift in Sources */,
+				2053CC9122F7AB610059D244 /* OnlineManager.swift in Sources */,
 				A6CA8C48213439CE00AB0D67 /* SummaryViewController.swift in Sources */,
 				20AC12E122F63616005D477B /* SummaryViewModel.swift in Sources */,
 				A6561A552135EAA900DA3437 /* MovieTrailerViewController.swift in Sources */,

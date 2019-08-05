@@ -9,22 +9,33 @@ Ejercicio catálogo cine REST
 Pattern MVVM
 
 * Model
-** Show
-** CollectionShow
+** Show *Entidad que representa una película
 
 * View Model
-** SummaryViewModel
+** SummaryViewModel *Gestor contenidos para vistas
 
 * View
-** SummaryViewController
-** ShowViewControlleer
+** SummaryViewController *Vista películas
+** ShowViewControlleer *Vista película
 
 * Networking
-** Request
+** Request *Gestor servicios
+** OnlineManager *Gestor conectividad
 
 * Data
-** RealmManager
-** UserDefaultsManager
+** DatamManager *Abstracción caché
+** DiskManager *Implementación caché para pod Disk
+
+* RxSwift
+** RxManager *Gestor observadores
+** Observer *Observador verificar conectividad
+### Pod
+
+* Alamofire
+* YoutubePlayer-Swift
+* Disk
+* RxSwift
+* RxCocoa
 
 ### Theory Test:
 
@@ -34,5 +45,5 @@ Pattern MVVM
 
 ### TODO:
 
-* Issue Realm
-* Issue YoutubePlayer-Swift at pod install
+* Issue YoutubePlayer-Swift at pod install and then Build 
+Failed

@@ -195,9 +195,3 @@ class Request: NSObject {
 		return components.url!
 	}
 }
-
-class Connectivity {
-    class var isConnectedToInternet:Bool {
-        return NetworkReachabilityManager()!.isReachable
-    }
-}
