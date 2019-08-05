@@ -87,46 +87,32 @@ class Request: NSObject {
 		}
 	}
 	
-//    static func getMoviesForSearchString(_ searchString: String, completionHandlerForMovies: @escaping (_ success: Bool, _ result: [Show]?, _ error: String?) -> Void)  {
-//
-//        //https://api.themoviedb.org/3/search/movie?api_key=0942529e191d0558f888245403b4dca7&query=Is
-//        /* 1. 📞 Realiza la llamada a la API, a través de la función request() de Alamofire 🚀 */
-//        Alamofire.request(configureUrlSearchText(Request.Methods.SearchTextMovie, searchString: searchString)).responseJSON { response in
-//
-//
-//            // response status code
-//            if let status = response.response?.statusCode {
-//                switch(status){
-//                case 200:
-//                    print("example success")
-//                default:
-//                    let errorMessage = "error with response status: \(status)"
-//                    completionHandlerForMovies(false, nil, errorMessage)
-//                }
-//            }
-//
-//            /* 2. Almacena la respuesta del servidor (response.result.value) en la constante 'jsonObjectResult' 📦 */
-//            if let jsonObjectResult: Any = response.result.value {
-//
-//                let jsonObjectResultDictionary = jsonObjectResult as! [String:AnyObject]
-//
-//                debugPrint("🤜JSON TEXT SEARCH MOVIES: \(jsonObjectResult)") // JSON obtenido
-//
-//                if let results = jsonObjectResultDictionary[Request.JSONResponseKeys.Results] {
-//
-//                    let resultsMovieTextSearch = Show.showsFromResults(results as! [[String : AnyObject]])
-//
-//                    //test
-//                    debugPrint("🤾🏼‍♂️ TMDBMovie...\(resultsMovieTextSearch)")
-//
-//                    completionHandlerForMovies(true, resultsMovieTextSearch, nil)
-//
-//                }
-//            }
-//
-//        }
-//
-//    }
+    // MARK: Movies for search
+    
+    static func getMoviesForSearchString(_ searchString: String, completionHandlerForMovies: @escaping (_ success: Bool, _ result: [Show]?, _ error: String?) -> Void)  {
+
+        Alamofire.request(configureUrlSearchText(Request.Methods.SearchTextMovie, searchString: searchString)).responseJSON { response in
+            if let status = response.response?.statusCode {
+                switch(status){
+                case 200:
+                    print("example success")
+                default:
+                    let errorMessage = "error with response status: \(status)"
+                    completionHandlerForMovies(false, nil, errorMessage)
+                }
+            }
+            if let jsonObjectResult: Any = response.result.value {
+                let jsonObjectResultDictionary = jsonObjectResult as! [String:AnyObject]
+                debugPrint("Result: \(jsonObjectResult)") // JSON obtenido
+                if let results = jsonObjectResultDictionary[Request.JSONResponseKeys.Results] {
+                    let resultsMovieTextSearch = Show.showsFromResults(results as! [[String : AnyObject]])
+                    debugPrint("Result...\(resultsMovieTextSearch)")
+                    completionHandlerForMovies(true, resultsMovieTextSearch, nil)
+
+                }
+            }
+        }
+    }
 	
 	
 	// MARK: Trailer

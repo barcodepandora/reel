@@ -47,7 +47,7 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.doReactive()
-//        self.prepareViewModel()
+        self.prepareViewModel()
         self.navigationItem.title = Constant.EXPLORE
         self.prepareSearchAndScopeBar()
         self.preparaShowViewController()
@@ -121,7 +121,7 @@ class SummaryViewController: UIViewController {
         self.initDictionaryForArrays()
     }
     
-    func initDictionaryForArrays() {
+    func initDictionaryForArrays() {        
         self.dictionaryForShowArrays = [Constant.EXPLORE: self.filteredMoviesArray, Constant.POPULAR: self.popularMoviesArray, Constant.TOP_RATED: self.topRatedMoviesArray, Constant.UPCOMING: self.upcomingMoviesArray] as! [String : [Show]]
     }
     
@@ -141,6 +141,17 @@ class SummaryViewController: UIViewController {
 			self.present(alertController, animated: true) {}
 		}
 	}
+    
+    func displayAndExit(_ title: String?, _ error: String?) {
+        if error != nil {
+            let alertController = UIAlertController(title: title, message: error, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+                exit(0)
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true) {}
+        }
+    }
 }
 
 

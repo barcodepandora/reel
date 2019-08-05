@@ -35,7 +35,6 @@ class SummaryViewModel {
     
     func refreshSummary() {
         self.summaryViewController.initDictionaryForArrays()
-        //self.stopActivityIndicator()
         self.summaryViewController.movieTableView.reloadData()
     }
 }

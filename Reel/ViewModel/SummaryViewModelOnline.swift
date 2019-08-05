@@ -67,31 +67,31 @@ class SummaryViewModelOnline: SummaryViewModel {
     }
     
     override func getSearchTextMovies(_ searchText: String) {
-        Request.getSummary(method: Request.Methods.SearchUpcomingMovies, limitForPages: 500)  { (success, collectionShow, error) in
-            DispatchQueue.main.async {
-                if success {
-                    if let searchTextMovies = collectionShow {
-                        self.summaryViewController.filteredMoviesArray = searchTextMovies
-                        self.refreshSummary()
-                    }
-                } else {
-                    self.summaryViewController.displayAlertView("Error Request Filtered", error)
-                }
-            }
-        }
+//        Request.getSummary(method: Request.Methods.SearchTextMovie, limitForPages: 500)  { (success, collectionShow, error) in
+//            DispatchQueue.main.async {
+//                if success {
+//                    if let searchTextMovies = collectionShow {
+//                        self.summaryViewController.filteredMoviesArray = searchTextMovies
+//                        self.refreshSummary()
+//                    }
+//                } else {
+//                    self.summaryViewController.displayAlertView("Error Request Filtered", error)
+//                }
+//            }
+//        }
         
-        //        Request.getMoviesForSearchString(searchText) { (success, searchTextMovies, error) in
-        //            DispatchQueue.main.async {
-        //                if success {
-        //                    if let searchTextMovies = searchTextMovies {
-        ////                        debugPrint("\(searchTextMovies)")
-        //                        self.filteredMoviesArray = searchTextMovies
-        //                        self.refreshSummary()
-        //                    }
-        //                } else {
-        //                    self.displayAlertView("Error Request Search", error)
-        //                }
-        //            }
-        //        }
-    }    
+                Request.getMoviesForSearchString(searchText) { (success, searchTextMovies, error) in
+                    DispatchQueue.main.async {
+                        if success {
+                            if let searchTextMovies = searchTextMovies {
+        //                        debugPrint("\(searchTextMovies)")
+                                self.summaryViewController.filteredMoviesArray = searchTextMovies
+                                self.refreshSummary()
+                            }
+                        } else {
+                            self.summaryViewController.displayAlertView("Error Request Search", error)
+                        }
+                    }
+                }
+    }
 }

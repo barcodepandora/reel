@@ -34,11 +34,11 @@ extension SummaryViewController: UISearchBarDelegate {
 		}
 		if searchText == "" {
 			filteredMoviesArray = [Show]()
-			self.refreshSummary()
+            self.summaryViewModel!.refreshSummary()
 			return
 		}
 		if !searchText.isEmpty {
-            getSearchTextMovies(searchText)
+            self.summaryViewModel!.getSearchTextMovies(searchText)
 		}
 	}
 	
@@ -49,12 +49,21 @@ extension SummaryViewController: UISearchBarDelegate {
 		case 1:
 			self.navigationItem.title = Constant.POPULAR
 			self.summaryViewModel!.getPopularMovies()
+            if (self.popularMoviesArray?.count == 0 && !OnlineManager.shared.isOnline()) {
+                self.displayAndExit("Error", "Error al cargar la información.")
+            }
 		case 2:
 			self.navigationItem.title = Constant.TOP_RATED
 			self.summaryViewModel!.getTopRatedMovies()
+            if (self.topRatedMoviesArray?.count == 0 && !OnlineManager.shared.isOnline()) {
+                self.displayAndExit("Error", "Error al cargar la información.")
+            }
 		case 3:
 			self.navigationItem.title = Constant.UPCOMING
 			self.summaryViewModel!.getUpcomingMovies()
+            if (self.upcomingMoviesArray?.count == 0 && !OnlineManager.shared.isOnline()) {
+                self.displayAndExit("Error", "Error al cargar la información.")
+            }
 		default:
 			print("selectedScopeButtonIndexDidChange Default")
 		}
@@ -77,7 +86,7 @@ extension SummaryViewController: UISearchBarDelegate {
 						return doesCategoryMatch && movie.title!.lowercased().contains(searchText.lowercased())
 					}
 				})
-				self.refreshSummary()
+				self.summaryViewModel!.refreshSummary()
 	}
 	
 	func isFiltering() -> Bool {

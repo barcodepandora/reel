@@ -18,7 +18,7 @@ class OnlineManager {
     // MARK: - Connectivity
     
     func isOnline() -> Bool {
-        return !Connectivity.isConnectedToInternet
+        return Connectivity.isConnectedToInternet
     }
 }
 
