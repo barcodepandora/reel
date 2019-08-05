@@ -60,6 +60,14 @@ import UIKit
 			
             if let showArray = self.dictionaryForShowArrays![navigationItem.title!] {
                 controller.selectedMovie = showArray[(indexPath as NSIndexPath).row]
+                
+                let transition = CATransition() // Transition
+                transition.duration = 2
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromRight
+                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+                self.view.window!.layer.add(transition, forKey: kCATransition)
+
                 navigationController!.pushViewController(controller, animated: true)
             }
         }

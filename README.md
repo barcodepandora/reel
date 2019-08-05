@@ -44,6 +44,9 @@ Pattern MVVM
 2. Un buen código, o "limpio" es un código simple de forma que sea entendible en su lectura y mantenible por más escritores
 
 ### TODO:
-
+ 
 * Issue YoutubePlayer-Swift at pod install and then Build 
 Failed
+* Offline-First for Explore
+* Add Firebase
+* Unit Tests
