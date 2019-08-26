@@ -1,8 +1,14 @@
 ## Reel
 
+### DISCLAIMER:
+
+Siguiendo los lineamientos propuestos para la prueba y ante los inconvenientes al usar recursos de Parse Server y Sharepoint se realizó mismo ejercicio con API The Movie Database
+
 ### Summary:
 
-Ejercicio catálogo cine REST
+Ejercicio producto iOS para VALID
+
+Catálogo cine REST
 
 ### Architect:
 
@@ -36,17 +42,13 @@ Pattern MVVM
 * Disk
 * RxSwift
 * RxCocoa
+### More
 
-### Theory Test:
-
-1. Principio de responsabilidad única: Toda abstracción debe hacerse cargo de una responsabilidad. De acuerdo a Single (S - SOLID)
-
-2. Un buen código, o "limpio" es un código simple de forma que sea entendible en su lectura y mantenible por más escritores
+* ATCWalkthroung
 
 ### TODO:
  
+* Resolve import Parse Server and Sharepoint
 * Issue YoutubePlayer-Swift at pod install and then Build 
 Failed
 * Offline-First for Explore
-* Add Firebase
-* Unit Tests

@@ -34,7 +34,7 @@ class ShowViewController: UIViewController {
     
 	func getPosterImage() {
 		if let posterPath = selectedMovie?.posterPath {
-			let _ = Request.getPosterImage(Request.ParameterValues.posterSizes[2], filePath: posterPath , { (imageData, error) in
+			let _ = RequestPoster().getPosterImage(Request.ParameterValues.posterSizes[2], filePath: posterPath , { (imageData, error) in
 				if UIImage(data: imageData!) != nil {
 					DispatchQueue.main.async {
 						self.poster.contentMode = UIView.ContentMode.scaleAspectFit
@@ -71,7 +71,7 @@ class ShowViewController: UIViewController {
         var movieId: String = String()
         if let selectedMovieId = selectedMovie?.movieId { movieId = String(selectedMovieId) }
         let videoMethod = Request.Methods.SearchMovie + movieId + Request.Methods.SearchVideo
-        Request.getMovieTrailer (videoMethod){ (success, movieTrailers, error) in
+        RequestMovieTrailer().getMovieTrailer (videoMethod){ (success, movieTrailers, error) in
             DispatchQueue.main.async {
                 if success {
                     if movieTrailers?.count == 0 {

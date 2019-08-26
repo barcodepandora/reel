@@ -35,7 +35,7 @@ import UIKit
 			cell.imageView?.image = preImage
 			
 			if let posterPath = movie?.posterPath {
-				let _ = Request.getPosterImage(Request.ParameterValues.posterSizes[0], filePath: posterPath , { (imageData, error) in
+				let _ = RequestPoster().getPosterImage(Request.ParameterValues.posterSizes[0], filePath: posterPath , { (imageData, error) in
 					if let image = UIImage(data: imageData!) {
 						DispatchQueue.main.async {
 							cell.imageView!.image = image
@@ -52,7 +52,7 @@ import UIKit
 	
 	extension SummaryViewController: UITableViewDelegate {
 		
-		// MARK: - UITableViewDataSource
+		// MARK: - UITableViewDelegate
         
 		func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 			

@@ -53,6 +53,9 @@ class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDeleg
         self.prepareSearchAndScopeBar()
         self.preparaShowViewController()
         self.initCharacter()
+        
+        self.movieTableView.dataSource = self
+        self.movieTableView.delegate = self
 
     }
 	
@@ -69,7 +72,7 @@ class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDeleg
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.doForFirstLaunch()
-        
+
     }
     
 	// MARK: - Action
@@ -174,8 +177,8 @@ class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDeleg
     func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController) {
         UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
             vc.view.removeFromSuperview()
-            let viewControllerToBePresented = UIViewController()
-            self.view.addSubview(viewControllerToBePresented.view)
+//            let viewControllerToBePresented = UIViewController()
+//            self.view.addSubview(viewControllerToBePresented.view)
         }, completion: nil)
     }
     

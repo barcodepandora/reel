@@ -17,7 +17,7 @@ class SummaryViewModelOnline: SummaryViewModel {
     
     override func getPopularMovies() {
         super.getPopularMovies()
-        Request.getSummary(method: Request.Methods.SearchPopularMovie, limitForPages: 306)  { (success, collectionShow, error) in
+        RequestSummary().getSummary(method: Request.Methods.SearchPopularMovie, limitForPages: 306)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let popularMovies = collectionShow {
@@ -34,7 +34,7 @@ class SummaryViewModelOnline: SummaryViewModel {
     
     override func getTopRatedMovies() {
         super.getTopRatedMovies()
-        Request.getSummary(method: Request.Methods.SearchTopRatedMovies, limitForPages: 15)  { (success, collectionShow, error) in
+        RequestSummary().getSummary(method: Request.Methods.SearchTopRatedMovies, limitForPages: 15)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let topRatedMovies = collectionShow {
@@ -51,7 +51,7 @@ class SummaryViewModelOnline: SummaryViewModel {
     
     override func getUpcomingMovies() {
         super.getUpcomingMovies()
-        Request.getSummary(method: Request.Methods.SearchUpcomingMovies, limitForPages: 15)  { (success, collectionShow, error) in
+        RequestSummary().getSummary(method: Request.Methods.SearchUpcomingMovies, limitForPages: 15)  { (success, collectionShow, error) in
             DispatchQueue.main.async {
                 if success {
                     if let upcomingMovies = collectionShow {
@@ -67,20 +67,7 @@ class SummaryViewModelOnline: SummaryViewModel {
     }
     
     override func getSearchTextMovies(_ searchText: String) {
-//        Request.getSummary(method: Request.Methods.SearchTextMovie, limitForPages: 500)  { (success, collectionShow, error) in
-//            DispatchQueue.main.async {
-//                if success {
-//                    if let searchTextMovies = collectionShow {
-//                        self.summaryViewController.filteredMoviesArray = searchTextMovies
-//                        self.refreshSummary()
-//                    }
-//                } else {
-//                    self.summaryViewController.displayAlertView("Error Request Filtered", error)
-//                }
-//            }
-//        }
-        
-                Request.getMoviesForSearchString(searchText) { (success, searchTextMovies, error) in
+                RequestSearchString().getMoviesForSearchString(searchText) { (success, searchTextMovies, error) in
                     DispatchQueue.main.async {
                         if success {
                             if let searchTextMovies = searchTextMovies {

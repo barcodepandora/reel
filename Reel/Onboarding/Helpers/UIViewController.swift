@@ -30,6 +30,7 @@ extension UIViewController {
         childViewController.view.removeFromSuperview()
         view.setNeedsLayout()
         view.layoutIfNeeded()
+        (self.parent as! SummaryViewController).refreshAfterOnboarding()
     }
 
     func hideKeyboardWhenTappedAround() {
@@ -40,5 +41,12 @@ extension UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+}
+
+extension SummaryViewController {
+    func refreshAfterOnboarding() {
+        self.summaryViewModel?.refreshSummary()
     }
 }
