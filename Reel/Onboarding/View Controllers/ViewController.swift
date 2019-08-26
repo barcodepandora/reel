@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,  ATCWalkthroughViewControllerDelegate{
     let walkthroughs = [
-        ATCWalkthroughModel(title: "Quick Overview", subtitle: "Quickly visualize important business metrics. The overview in the home tab shows the most important metrics to monitor how your business is doing in real time.", icon: "analytics-icon"),
+        ATCWalkthroughModel(title: "No es Link", subtitle: "No éxito al consultar los recusos de Sketch e importado los servicios de Parse Server. Sin embargo se realizó la prueba de acuerdo a los lineamientos propuestos", icon: "Onboarding001"),
         ATCWalkthroughModel(title: "Analytics", subtitle: "Dive deep into charts to extract valuable insights and come up with data driven product initiatives, to boost the success of your business.", icon: "bars-icon"),
         ATCWalkthroughModel(title: "Dashboard Feeds", subtitle: "View your sales feed, orders, customers, products and employees.", icon: "activity-feed-icon"),
         ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when critical situations occur to stay on top of everything important.", icon: "bell-icon"),

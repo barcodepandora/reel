@@ -248,26 +248,38 @@
         <scene sceneID="SmN-aG-QeJ">
             <objects>
                 <viewController storyboardIdentifier="Welcome" id="FRF-ne-5q0" customClass="WelcomeViewController" customModule="Reel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="an9-K1-Kfc">
+                    <view key="view" contentMode="scaleToFill" id="an9-K1-Kfc" customClass="GradientViewForWelcome" customModule="Reel" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test for VALID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-Bs-tfP">
-                                <rect key="frame" x="83" y="323" width="208" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test for VALID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-Bs-tfP">
+                                <rect key="frame" x="83.5" y="317" width="208" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="0wG-TF-cnl"/>
+                                    <constraint firstAttribute="height" constant="53" id="Wb1-C2-M59"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Powered bu Uzupis O." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BI-IB-qhT">
-                                <rect key="frame" x="83" y="352" width="208" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered bu Uzupis O." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BI-IB-qhT">
+                                <rect key="frame" x="83.5" y="374" width="208" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="9xd-FW-BIJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="fKt-MM-I5u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aY3-Bs-tfP" firstAttribute="centerY" secondItem="Rjv-5E-uiT" secondAttribute="centerY" id="LRV-cd-BaQ"/>
+                            <constraint firstItem="1BI-IB-qhT" firstAttribute="centerX" secondItem="Rjv-5E-uiT" secondAttribute="centerX" id="hGf-LA-UZW"/>
+                            <constraint firstItem="1BI-IB-qhT" firstAttribute="top" secondItem="aY3-Bs-tfP" secondAttribute="bottom" constant="4" id="iBS-b5-5Pc"/>
+                            <constraint firstItem="aY3-Bs-tfP" firstAttribute="centerX" secondItem="Rjv-5E-uiT" secondAttribute="centerX" id="oq0-gY-Nhu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rjv-5E-uiT"/>
                     </view>
                 </viewController>

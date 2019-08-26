@@ -31,9 +31,9 @@ class ATCClassicWalkthroughViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage.localImage(model.icon, template: true)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
-        imageView.tintColor = .white
+//        imageView.tintColor = .white
         imageContainerView.backgroundColor = .clear
 
         titleLabel.text = model.title
@@ -44,6 +44,15 @@ class ATCClassicWalkthroughViewController: UIViewController {
         subtitleLabel.font = UIFont.systemFont(ofSize: 14.0)
         subtitleLabel.textColor = .white
 
-        containerView.backgroundColor = UIColor(hexString: "#3068CC")
+//        containerView.backgroundColor = UIColor(hexString: "#3068CC")
+    }
+}
+
+class GradientViewForOnboarding: GradientView {
+    @IBInspectable override var startColor: UIColor! {
+        return UIColor(red: 255/255, green: 50/255, blue: 100/255, alpha: 0.8)
+    }
+    @IBInspectable override var endColor: UIColor! {
+        return UIColor(red: 17/255, green: 24/255, blue: 53/255, alpha: 0.8)
     }
 }

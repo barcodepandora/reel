@@ -181,10 +181,9 @@ class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDeleg
     
     func getOnboardingModel() -> [ATCWalkthroughModel] {
         return [
-            ATCWalkthroughModel(title: "Quick Overview", subtitle: "Quickly visualize important business metrics. The overview in the home tab shows the most important metrics to monitor how your business is doing in real time.", icon: "analytics-icon"),
-            ATCWalkthroughModel(title: "Analytics", subtitle: "Dive deep into charts to extract valuable insights and come up with data driven product initiatives, to boost the success of your business.", icon: "bars-icon"),
-            ATCWalkthroughModel(title: "Dashboard Feeds", subtitle: "View your sales feed, orders, customers, products and employees.", icon: "activity-feed-icon"),
-//            ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when critical situations occur to stay on top of everything important.", icon: "bell-icon"),
+            ATCWalkthroughModel(title: "No es Link", subtitle: "No ha sido exitoso consultar los recursos de Sketch e importado los servicios de Parse Server. Sin embargo se realizó la prueba de acuerdo a los lineamientos propuestos con otros recursos y servicios", icon: "onboarding001"),
+            ATCWalkthroughModel(title: "Si es Charizard", subtitle: "Se propone realizar la prueba con el API de The Movie Database. Seguimos igualmente el brief, el workflow y los requerimientos dados en los enunciados", icon: "onboarding002"),
+            ATCWalkthroughModel(title: "ToDo", subtitle: "*Resolver acceso a Parse Server y Sharepoint *Offline-First para opción Explore *UnitTest UITest", icon: "onboarding003"),
         ]
     }
     
