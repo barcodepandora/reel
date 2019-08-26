@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class SummaryViewController: UIViewController {
+class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
 	
     // MARK: - Character
     
@@ -20,6 +20,7 @@ class SummaryViewController: UIViewController {
     var filteredMoviesArray: [Show]?
     var dictionaryForShowArrays: [String: [Show]]?
     var summaryViewModel: SummaryViewModel?
+    weak var welcome: WelcomeViewController?
 	
 	// MARK: - Show
     
@@ -52,6 +53,7 @@ class SummaryViewController: UIViewController {
         self.prepareSearchAndScopeBar()
         self.preparaShowViewController()
         self.initCharacter()
+
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -61,8 +63,15 @@ class SummaryViewController: UIViewController {
 			}
 		}
 		super.viewWillAppear(animated)
+        
 	}
 	
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.doForFirstLaunch()
+        
+    }
+    
 	// MARK: - Action
 
     @IBAction func refreshButtonPressed(_ sender: UIBarButtonItem) {
@@ -152,6 +161,71 @@ class SummaryViewController: UIViewController {
             self.present(alertController, animated: true) {}
         }
     }
+    
+    // MARK: - Onboarding
+    
+    func prepareOnboarding() {
+        let walkthroughVC = self.walkthroughVC()
+        walkthroughVC.delegate = self
+        self.addChildViewControllerWithView(walkthroughVC)
+
+    }
+
+    func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController) {
+        UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
+            vc.view.removeFromSuperview()
+            let viewControllerToBePresented = UIViewController()
+            self.view.addSubview(viewControllerToBePresented.view)
+        }, completion: nil)
+    }
+    
+    func getOnboardingModel() -> [ATCWalkthroughModel] {
+        return [
+            ATCWalkthroughModel(title: "Quick Overview", subtitle: "Quickly visualize important business metrics. The overview in the home tab shows the most important metrics to monitor how your business is doing in real time.", icon: "analytics-icon"),
+            ATCWalkthroughModel(title: "Analytics", subtitle: "Dive deep into charts to extract valuable insights and come up with data driven product initiatives, to boost the success of your business.", icon: "bars-icon"),
+            ATCWalkthroughModel(title: "Dashboard Feeds", subtitle: "View your sales feed, orders, customers, products and employees.", icon: "activity-feed-icon"),
+//            ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when critical situations occur to stay on top of everything important.", icon: "bell-icon"),
+        ]
+    }
+    
+    fileprivate func walkthroughVC() -> ATCWalkthroughViewController {
+        let viewControllers = self.getOnboardingModel().map { ATCClassicWalkthroughViewController(model: $0, nibName: "ATCClassicWalkthroughViewController", bundle: nil) }
+        return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController",
+                                            bundle: nil,
+                                            viewControllers: viewControllers)
+    }
+    
+    // MARK: - First time
+    
+    func doForFirstLaunch() {
+        if (FirstLaunch().isFirstLaunch) {
+            self.doWelcome()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.welcome!.dismiss(animated: true, completion: nil)
+                self.welcome = nil
+                self.prepareOnboarding()
+            }
+        }
+    }
+    
+    func doWelcome() {
+        if let welcomeT = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Welcome") as? WelcomeViewController {
+            self.welcome = welcomeT
+            self.definesPresentationContext = true
+            welcome!.modalPresentationStyle = .overFullScreen
+
+            let transition = CATransition() // Transition
+            transition.duration = 2
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromTop
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            self.view.window!.layer.add(transition, forKey: kCATransition)
+
+            self.present(welcome!, animated: true, completion: nil)
+        }
+
+    }
+
 }
 
 

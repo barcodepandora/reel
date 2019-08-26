@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,17 @@
 		20AC12E322F636CC005D477B /* SummaryViewModelOnline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */; };
 		20AC12E522F658F7005D477B /* SummaryViewModelOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */; };
 		5E8046B9E2B067F23CB90C92 /* Pods_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8B4ED3DEFF23A9AB0081AB /* Pods_Reel.framework */; };
+		6049AAD323133A8D0083C934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AAC823133A8C0083C934 /* ViewController.swift */; };
+		6049AAD423133A8D0083C934 /* ATCWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6049AAC923133A8C0083C934 /* ATCWalkthroughViewController.xib */; };
+		6049AAD523133A8D0083C934 /* ATCWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AACA23133A8C0083C934 /* ATCWalkthroughViewController.swift */; };
+		6049AAD623133A8D0083C934 /* ATCClassicWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6049AACB23133A8C0083C934 /* ATCClassicWalkthroughViewController.xib */; };
+		6049AAD723133A8D0083C934 /* ATCClassicWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AACC23133A8C0083C934 /* ATCClassicWalkthroughViewController.swift */; };
+		6049AAD823133A8D0083C934 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AACE23133A8D0083C934 /* UIColor.swift */; };
+		6049AAD923133A8D0083C934 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AACF23133A8D0083C934 /* UIImage.swift */; };
+		6049AADA23133A8D0083C934 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AAD023133A8D0083C934 /* UIViewController.swift */; };
+		6049AADB23133A8D0083C934 /* ATCWalkthroughModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AAD223133A8D0083C934 /* ATCWalkthroughModel.swift */; };
+		6049AADD2313598C0083C934 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AADC2313598C0083C934 /* FirstLaunch.swift */; };
+		6049AAE023135D670083C934 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6049AADF23135D670083C934 /* WelcomeViewController.swift */; };
 		8B9A3A7595E009B9685D716C /* Pods_Reel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E946BE0B9809CBE9A97445 /* Pods_Reel.framework */; };
 		A646EBC821389D850070349D /* SummarySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A646EBC721389D850070349D /* SummarySearchController.swift */; };
 		A646EBCA21389E3B0070349D /* SummaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A646EBC921389E3B0070349D /* SummaryTable.swift */; };
@@ -45,6 +56,17 @@
 		20AC12E022F63616005D477B /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		20AC12E222F636CC005D477B /* SummaryViewModelOnline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOnline.swift; sourceTree = "<group>"; };
 		20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModelOffline.swift; sourceTree = "<group>"; };
+		6049AAC823133A8C0083C934 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6049AAC923133A8C0083C934 /* ATCWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCWalkthroughViewController.xib; sourceTree = "<group>"; };
+		6049AACA23133A8C0083C934 /* ATCWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughViewController.swift; sourceTree = "<group>"; };
+		6049AACB23133A8C0083C934 /* ATCClassicWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicWalkthroughViewController.xib; sourceTree = "<group>"; };
+		6049AACC23133A8C0083C934 /* ATCClassicWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicWalkthroughViewController.swift; sourceTree = "<group>"; };
+		6049AACE23133A8D0083C934 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6049AACF23133A8D0083C934 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		6049AAD023133A8D0083C934 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6049AAD223133A8D0083C934 /* ATCWalkthroughModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughModel.swift; sourceTree = "<group>"; };
+		6049AADC2313598C0083C934 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		6049AADF23135D670083C934 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		677D63495A11716697F18E9A /* Pods-Reel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reel/Pods-Reel.debug.xcconfig"; sourceTree = "<group>"; };
 		82E946BE0B9809CBE9A97445 /* Pods_Reel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97D29087A8CABF721A63A04B /* Pods-Reel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reel/Pods-Reel.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				20143F4122F5D22F002FBC9A /* Constant.swift */,
+				6049AADC2313598C0083C934 /* FirstLaunch.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -119,6 +142,54 @@
 				20AC12E422F658F7005D477B /* SummaryViewModelOffline.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6049AAC723133A8C0083C934 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6049AAC823133A8C0083C934 /* ViewController.swift */,
+				6049AAC923133A8C0083C934 /* ATCWalkthroughViewController.xib */,
+				6049AACA23133A8C0083C934 /* ATCWalkthroughViewController.swift */,
+				6049AACB23133A8C0083C934 /* ATCClassicWalkthroughViewController.xib */,
+				6049AACC23133A8C0083C934 /* ATCClassicWalkthroughViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6049AACD23133A8D0083C934 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6049AACE23133A8D0083C934 /* UIColor.swift */,
+				6049AACF23133A8D0083C934 /* UIImage.swift */,
+				6049AAD023133A8D0083C934 /* UIViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6049AAD123133A8D0083C934 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6049AAD223133A8D0083C934 /* ATCWalkthroughModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6049AADE23135D310083C934 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				6049AADF23135D670083C934 /* WelcomeViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		6095F8482313395100A5BD71 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6049AACD23133A8D0083C934 /* Helpers */,
+				6049AAD123133A8D0083C934 /* Models */,
+				6049AAC723133A8C0083C934 /* View Controllers */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		8D6BA6510C3E81F010D6CB67 /* Frameworks */ = {
@@ -211,6 +282,8 @@
 		A6B227122128A49D0024E410 /* Reel */ = {
 			isa = PBXGroup;
 			children = (
+				6049AADE23135D310083C934 /* New Group */,
+				6095F8482313395100A5BD71 /* Onboarding */,
 				2053CC8722F752FB0059D244 /* Data */,
 				2053CC9222F7AE290059D244 /* RxSwift */,
 				A6561A532135B93F00DA3437 /* VIew */,
@@ -306,7 +379,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6049AAD423133A8D0083C934 /* ATCWalkthroughViewController.xib in Resources */,
 				A6B2271E2128A49E0024E410 /* LaunchScreen.storyboard in Resources */,
+				6049AAD623133A8D0083C934 /* ATCClassicWalkthroughViewController.xib in Resources */,
 				A6B2271B2128A49E0024E410 /* Assets.xcassets in Resources */,
 				A6B227192128A49D0024E410 /* Main.storyboard in Resources */,
 			);
@@ -338,21 +413,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reel/Pods-Reel-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reel/Pods-Reel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reel/Pods-Reel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,15 +433,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2053CC8B22F7540E0059D244 /* DataManager.swift in Sources */,
+				6049AAD523133A8D0083C934 /* ATCWalkthroughViewController.swift in Sources */,
 				A646EBCA21389E3B0070349D /* SummaryTable.swift in Sources */,
 				2053CC8F22F7A0360059D244 /* DiskManager.swift in Sources */,
+				6049AADA23133A8D0083C934 /* UIViewController.swift in Sources */,
 				A6BAFE44212F516E00A7E1C9 /* Show.swift in Sources */,
+				6049AADD2313598C0083C934 /* FirstLaunch.swift in Sources */,
 				A6E7B359212919DE00CCFBB2 /* RequestConstant.swift in Sources */,
 				2053CC9422F7AE3A0059D244 /* RxManager.swift in Sources */,
 				A6561A522135B93A00DA3437 /* ShowDesign.swift in Sources */,
 				2053CC9622F7AED60059D244 /* ObserverOnline.swift in Sources */,
+				6049AAD923133A8D0083C934 /* UIImage.swift in Sources */,
+				6049AADB23133A8D0083C934 /* ATCWalkthroughModel.swift in Sources */,
+				6049AAE023135D670083C934 /* WelcomeViewController.swift in Sources */,
+				6049AAD723133A8D0083C934 /* ATCClassicWalkthroughViewController.swift in Sources */,
+				6049AAD823133A8D0083C934 /* UIColor.swift in Sources */,
 				A67B4B7E2129143300097CB9 /* Request.swift in Sources */,
 				2053CC9122F7AB610059D244 /* OnlineManager.swift in Sources */,
+				6049AAD323133A8D0083C934 /* ViewController.swift in Sources */,
 				A6CA8C48213439CE00AB0D67 /* SummaryViewController.swift in Sources */,
 				20AC12E122F63616005D477B /* SummaryViewModel.swift in Sources */,
 				A6561A552135EAA900DA3437 /* MovieTrailerViewController.swift in Sources */,
