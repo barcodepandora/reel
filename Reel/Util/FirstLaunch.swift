@@ -15,8 +15,8 @@ final class FirstLaunch {
     let wasLaunchedBefore: Bool
     
     var isFirstLaunch: Bool {
-        return !wasLaunchedBefore
-//        return true
+//        return !wasLaunchedBefore
+        return true
     }
     
     init() {

@@ -2,11 +2,11 @@
 
 ### DISCLAIMER:
 
-Siguiendo los lineamientos propuestos para la prueba y ante los inconvenientes al usar recursos de Parse Server y Sharepoint se realizó mismo ejercicio con API The Movie Database
+Siguiendo los lineamientos propuestos para la prueba se realizó mismo ejercicio con API The Movie Database. Se realizó catálogo en lugar de producto E-commerce
 
 ### Summary:
 
-Ejercicio producto iOS para VALID
+Ejercicio producto iOS para Q-enta
 
 Catálogo cine REST
 
@@ -48,7 +48,7 @@ Pattern MVVM
 
 ### TODO:
  
-* Resolve import Parse Server and Sharepoint
+* E-commerce
 * Issue YoutubePlayer-Swift at pod install and then Build 
 Failed
 * Offline-First for Explore

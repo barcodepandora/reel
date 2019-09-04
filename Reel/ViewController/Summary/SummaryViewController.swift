@@ -184,9 +184,9 @@ class SummaryViewController: UIViewController, ATCWalkthroughViewControllerDeleg
     
     func getOnboardingModel() -> [ATCWalkthroughModel] {
         return [
-            ATCWalkthroughModel(title: "No es Link", subtitle: "No ha sido exitoso consultar los recursos de Sketch e importado los servicios de Parse Server. Sin embargo se realizó la prueba de acuerdo a los lineamientos propuestos con otros recursos y servicios", icon: "onboarding001"),
-            ATCWalkthroughModel(title: "Si es Charizard", subtitle: "Se propone realizar la prueba con el API de The Movie Database. Seguimos igualmente el brief, el workflow y los requerimientos dados en los enunciados", icon: "onboarding002"),
-            ATCWalkthroughModel(title: "ToDo", subtitle: "*Resolver acceso a Parse Server y Sharepoint *Offline-First para opción Explore *UnitTest UITest", icon: "onboarding003"),
+            ATCWalkthroughModel(title: "About", subtitle: "Este es un catálogo de cine importando el API de The Movie Database", icon: "onboarding001"),
+            ATCWalkthroughModel(title: "Stuff", subtitle: "*REST *Online Offline *MVVM *Categorias de contenidos *Base de datos *Onboarding *First launch *RxSwift", icon: "onboarding002"),
+            ATCWalkthroughModel(title: "ToDo", subtitle: "*E-commerce *Offline-First para opción Explore *UnitTest UITest", icon: "onboarding003"),
         ]
     }
     
